@@ -1,0 +1,4 @@
+*
+!.gitignore
+!stack.yaml
+!scripts/build.sh
