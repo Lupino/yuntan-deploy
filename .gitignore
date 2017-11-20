@@ -2,3 +2,4 @@
 !.gitignore
 !stack.yaml
 !scripts/build.sh
+!README.md
