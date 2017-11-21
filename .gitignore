@@ -2,4 +2,6 @@
 !.gitignore
 !stack.yaml
 !scripts/build.sh
+!scripts/clean.sh
 !README.md
+!Dockerfile
