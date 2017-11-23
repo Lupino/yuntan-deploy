@@ -1,7 +1,7 @@
-*
-!.gitignore
-!stack.yaml
-!scripts/build.sh
-!scripts/clean.sh
-!README.md
-!Dockerfile
+apps
+bin
+packages
+third_party
+tools
+.stack-work
+system
