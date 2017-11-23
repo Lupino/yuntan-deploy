@@ -5,3 +5,5 @@ third_party
 tools
 .stack-work
 system
+*.log
+*.pid
