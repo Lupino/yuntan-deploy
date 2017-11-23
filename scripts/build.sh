@@ -79,6 +79,8 @@ for pkg in ${THIRD_PARTY[@]};do
 done
 cd ..
 
+sed '/Aeson$/s/$/                         hiding (Options)/' -i third_party/haskell-hummingbird/src/Hummingbird.hs
+
 stack build
 
 stack install
