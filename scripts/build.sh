@@ -82,6 +82,11 @@ done
 cd ..
 
 sed '/Aeson$/s/$/                         hiding (Options)/' -i third_party/haskell-hummingbird/src/Hummingbird.hs
+sed '/hummingbird.hs$/s/hummingbird/Main/' -i third_party/haskell-hummingbird/hummingbird.cabal
+
+cd third_party/haskell-hummingbird/app
+mv hummingbird.hs Main.hs
+cd -
 
 stack build
 
