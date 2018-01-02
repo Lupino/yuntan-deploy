@@ -2,32 +2,48 @@
 # For more information, see: http://docs.haskellstack.org/en/stable/yaml_configuration/
 
 # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
-resolver: nightly-2017-11-21
+resolver: lts-10.2
 
 # Local packages, usually specified by relative directory name
 packages:
-- 'system/yuntan-gateway'
-- 'apps/coin'
-- 'apps/yuntan-user'
-- 'apps/yuntan-share'
-- 'apps/yuntan-article'
-- 'apps/yuntan-cart'
-- 'apps/func'
-- 'apps/sharefs/share-fs-common'
-- 'apps/sharefs/share-fs-client'
-- 'apps/sharefs/share-fs-server'
-- 'apps/sharefs/share-fs-fuse'
-- 'apps/mergeJsonRequest'
-- 'apps/yuntan-mqtt'
-- 'packages/yuntan-base'
-- 'packages/yuntan-common'
-- 'packages/haskell-periodic/periodic-client'
-- 'packages/haskell-periodic/periodic-common'
-- 'packages/haskell-periodic/periodic-server'
-- 'third_party/Angel'
-- 'third_party/haskell-mqtt'
-- 'third_party/haskell-hummingbird'
-- 'third_party/graphql-haskell'
+-  system/yuntan-gateway
+-  apps/coin
+-  apps/yuntan-user
+-  apps/yuntan-share
+-  apps/yuntan-article
+-  apps/yuntan-cart
+-  apps/func
+-  apps/sharefs/share-fs-common
+-  apps/sharefs/share-fs-client
+-  apps/sharefs/share-fs-server
+-  apps/sharefs/share-fs-fuse
+-  apps/mergeJsonRequest
+-  apps/yuntan-mqtt
+- packages/yuntan-base/yuntan-base
+- packages/yuntan-base/yuntan-base-user
+- packages/yuntan-base/yuntan-base-coin
+- packages/yuntan-base/yuntan-base-search
+- packages/yuntan-base/yuntan-base-test
+- packages/yuntan-common/yuntan-common-json
+- packages/yuntan-common/yuntan-common-list-result
+- packages/yuntan-common/yuntan-common-result
+- packages/yuntan-common/yuntan-common-order
+- packages/yuntan-common/yuntan-common-scotty
+- packages/yuntan-common/yuntan-common-scotty-type
+- packages/yuntan-common/yuntan-common-wreq
+- packages/yuntan-common/yuntan-common-signature
+- packages/yuntan-common/yuntan-common-graphql
+- packages/yuntan-common/yuntan-common-haxl
+- packages/yuntan-common/yuntan-common-config-influxdb
+- packages/yuntan-common/yuntan-common-config-mysql
+- packages/yuntan-common/yuntan-common-config-redis
+-  packages/haskell-periodic/periodic-client
+-  packages/haskell-periodic/periodic-common
+-  packages/haskell-periodic/periodic-server
+-  third_party/Angel
+-  third_party/haskell-mqtt
+-  third_party/haskell-hummingbird
+-  third_party/graphql-haskell
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:
@@ -35,24 +51,7 @@ extra-deps:
 - socket-unix-0.2.0.0
 
 # Override default flag values for local packages and extra-deps
-flags:
-  yuntan-common:
-    mysql-config: true
-    graphql-utils: true
-    haxl-utils: true
-    json-utils: true
-    scotty-utils: true
-    scotty-type: true
-    signature-utils: true
-    result-type: true
-    list-result-type: true
-    order-by-type: true
-    wreq-utils: true
-
-  yuntan-base:
-    user: true
-    coin: true
-    search: true
+# flags: {}
 
 # Extra package databases containing global packages
 extra-package-dbs: []
@@ -74,6 +73,7 @@ system-ghc: true
 
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
+allow-newer: true
 
 
 local-bin-path: bin

@@ -37,6 +37,8 @@ update_package() {
     base_package_name=`basename ${pkg%.git}`
     if [ -d $base_package_name ];then
         cd $base_package_name
+        git reset --hard
+        git clean -f
         git pull
         cd ..
     else
