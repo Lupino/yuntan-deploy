@@ -30,6 +30,8 @@ THIRD_PARTY=(
     https://github.com/jdnavarro/graphql-haskell.git
     https://github.com/lpeterse/haskell-hummingbird.git
     https://github.com/lpeterse/haskell-mqtt.git
+    https://github.com/facebook/Haxl.git
+    https://github.com/lpeterse/haskell-networking.git
 )
 
 update_package() {
