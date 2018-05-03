@@ -28,7 +28,7 @@ TOOLS=(
 THIRD_PARTY=(
     https://github.com/MichaelXavier/Angel.git
     https://github.com/jdnavarro/graphql-haskell.git
-    https://github.com/lpeterse/haskell-mqtt.git
+    https://github.com/Lupino/haskell-mqtt.git
     https://github.com/facebook/Haxl.git
     https://github.com/lpeterse/haskell-networking.git
     https://github.com/Lupino/haskell-socket.git

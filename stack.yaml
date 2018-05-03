@@ -34,6 +34,7 @@ packages:
 - packages/yuntan-common/yuntan-common-signature
 - packages/yuntan-common/yuntan-common-graphql
 - packages/yuntan-common/yuntan-common-haxl
+- packages/yuntan-common/yuntan-common-lrucaching
 - packages/yuntan-common/yuntan-common-config-influxdb
 - packages/yuntan-common/yuntan-common-config-mysql
 - packages/yuntan-common/yuntan-common-config-redis
