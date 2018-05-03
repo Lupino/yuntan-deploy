@@ -28,10 +28,10 @@ TOOLS=(
 THIRD_PARTY=(
     https://github.com/MichaelXavier/Angel.git
     https://github.com/jdnavarro/graphql-haskell.git
-    https://github.com/lpeterse/haskell-hummingbird.git
     https://github.com/lpeterse/haskell-mqtt.git
     https://github.com/facebook/Haxl.git
     https://github.com/lpeterse/haskell-networking.git
+    https://github.com/Lupino/haskell-socket.git
 )
 
 update_package() {
@@ -82,13 +82,6 @@ for pkg in ${THIRD_PARTY[@]};do
     update_package $pkg
 done
 cd ..
-
-sed '/Aeson$/s/$/                         hiding (Options)/' -i third_party/haskell-hummingbird/src/Hummingbird.hs
-sed '/hummingbird.hs$/s/hummingbird/Main/' -i third_party/haskell-hummingbird/hummingbird.cabal
-
-cd third_party/haskell-hummingbird/app
-mv hummingbird.hs Main.hs
-cd -
 
 stack build
 
