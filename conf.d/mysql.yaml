@@ -1,6 +1,6 @@
 mysql:
-  db: microservices
-  host: 127.0.0.1
+  db: test
+  host: mysqld
   port: 3306
   user: root
   pass: root

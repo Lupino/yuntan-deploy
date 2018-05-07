@@ -12,7 +12,7 @@ services:
     - MYSQL_ROOT_PASSWORD=root
   simple-gateway:
     restart: always
-    image: yuntan-gateway:yuntan-build
+    image: simple-gateway:yuntan-build
     depends_on:
     - mysqld
     volumes:
@@ -33,7 +33,7 @@ services:
     command: ["--config", "config.yaml", "--host", "0.0.0.0", "--port", "13001", "--table_prefix", "47d4ad028e6deab9a59f"]
   yuntan-user:
     restart: always
-    image: yutnan-user:yuntan-build
+    image: yuntan-user:yuntan-build
     depends_on:
     - mysqld
     volumes:
