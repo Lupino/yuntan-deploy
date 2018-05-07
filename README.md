@@ -10,3 +10,11 @@ First make sure your installed them.
 ## build
 
 Just use `scripts/compile.sh` to build all the `services` and `simple-gateway`.
+
+## Build docker images
+
+Just use `scripts/build.sh`
+
+## Run in docker
+
+Just use `docker-compose up -d`
