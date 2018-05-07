@@ -1,0 +1,53 @@
+version: "3"
+services:
+  mysqld:
+    restart: always
+    image: mysql:latest
+    volumes:
+    - /data/lib/mysql:/var/lib/mysql
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    - /data/conf.d/mysql.cnf:/etc/mysql/conf.d/docker.cnf
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+  simple-gateway:
+    restart: always
+    image: yuntan-gateway:yuntan-build
+    depends_on:
+    - mysqld
+    volumes:
+    - /data/conf.d/simple-gateway.yaml:/data/config.yaml
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    ports:
+    - '192.168.42.1:13000:13000'
+  coin:
+    restart: always
+    image: coin:yuntan-build
+    depends_on:
+    - mysqld
+    volumes:
+    - /data/conf.d/mysql.yaml:/data/config.yaml
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    command: ["--config", "config.yaml", "--host", "0.0.0.0", "--port", "13001", "--table_prefix", "47d4ad028e6deab9a59f"]
+  yuntan-user:
+    restart: always
+    image: yutnan-user:yuntan-build
+    depends_on:
+    - mysqld
+    volumes:
+    - /data/conf.d/mysql.yaml:/data/config.yaml
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    command: ["--config", "config.yaml", "--host", "0.0.0.0", "--port", "13002", "--table_prefix", "303a7f6361985d1eb891"]
+  yuntan-article:
+    restart: always
+    image: yuntan-article:yuntan-build
+    depends_on:
+    - mysqld
+    volumes:
+    - /data/conf.d/mysql.yaml:/data/config.yaml
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro
+    command: ["--config", "config.yaml", "--host", "0.0.0.0", "--port", "13003", "--table_prefix", "8d8c6771e70ff06c95c5"]
