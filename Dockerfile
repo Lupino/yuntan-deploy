@@ -8,5 +8,5 @@ RUN apt-get update && \
 WORKDIR /data
 ADD stack.yaml /data/stack.yaml
 RUN stack setup
-ADD scripts/build.sh /data/build.sh
-RUN /data/build.sh
+ADD scripts/compile.sh /data/compile.sh
+RUN /data/compile.sh

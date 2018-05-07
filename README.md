@@ -9,4 +9,4 @@ First make sure your installed them.
 
 ## build
 
-Just use `scripts/build.sh` to build all the `services` and `simple-gateway`.
+Just use `scripts/compile.sh` to build all the `services` and `simple-gateway`.
