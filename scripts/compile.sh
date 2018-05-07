@@ -22,11 +22,7 @@ SYSTEM_APPS=(
     http://github.com/Lupino/yuntan-gateway.git
 )
 
-TOOLS=(
-)
-
 THIRD_PARTY=(
-    https://github.com/MichaelXavier/Angel.git
     https://github.com/jdnavarro/graphql-haskell.git
     https://github.com/Lupino/haskell-mqtt.git
     https://github.com/facebook/Haxl.git
@@ -65,13 +61,6 @@ cd ..
 mkdir -p system
 cd system
 for pkg in ${SYSTEM_APPS[@]};do
-    update_package $pkg
-done
-cd ..
-
-mkdir -p tools
-cd tools
-for pkg in ${TOOLS[@]};do
     update_package $pkg
 done
 cd ..
