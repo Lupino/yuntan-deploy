@@ -2,7 +2,7 @@ version: "3"
 services:
   mysqld:
     restart: always
-    image: mysql:latest
+    image: mysql:5.7.22
     volumes:
     - /data/lib/mysql:/var/lib/mysql
     - /etc/timezone:/etc/timezone:ro
@@ -10,6 +10,7 @@ services:
     - /data/conf.d/mysql.cnf:/etc/mysql/conf.d/docker.cnf
     environment:
     - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=microservices
   simple-gateway:
     restart: always
     image: simple-gateway:yuntan-build
@@ -20,7 +21,7 @@ services:
     - /etc/timezone:/etc/timezone:ro
     - /etc/localtime:/etc/localtime:ro
     ports:
-    - '192.168.42.1:13000:13000'
+    - '13000:13000'
   coin:
     restart: always
     image: coin:yuntan-build
