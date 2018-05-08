@@ -26,6 +26,7 @@ docker build -t yuntan-mqtt:$VER images/yuntan-mqtt
 build_service() {
     cp conf.d/mysql.yaml images/$1
     cp conf.d/entrypoint.sh images/$1
+    sed -i "s/SERVICE/$1/g" images/$1/entrypoint.sh
     docker cp yuntan-builded:/data/bin/$1 images/$1
     docker build -t $1:$VER images/$1
 }

@@ -8,4 +8,8 @@ PORT=${PORT:-"3000"}
 CONFIG=${CONFIG:-"/data/config.yaml"}
 TABLE_PREFIX=${TABLE_PREFIX:-"test"}
 
-exec $1 --host $HOST --port $PORT --config $CONFIG --table_prefix $TABLE_PREFIX
+if [ "$1" = 'SERVICE' ]; then
+    exec SERVICE --host $HOST --port $PORT --config $CONFIG --table_prefix $TABLE_PREFIX
+else
+    exec $@
+fi
