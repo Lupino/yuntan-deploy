@@ -41,7 +41,6 @@ packages:
 - packages/haskell-periodic/periodic-client
 - packages/haskell-periodic/periodic-common
 - packages/haskell-periodic/periodic-server
-- third_party/Angel
 - third_party/Haxl
 - third_party/haskell-mqtt
 - third_party/graphql-haskell
