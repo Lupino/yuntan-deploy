@@ -2,7 +2,7 @@
 
 VER=yuntan-build
 
-docker build -t yuntan-build . || exit 1
+docker build -t yuntan-build compile || exit 1
 
 docker rm yuntan-builded
 
