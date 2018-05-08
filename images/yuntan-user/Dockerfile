@@ -7,8 +7,10 @@ RUN apt-get update && \
 
 WORKDIR /data
 
+COPY entrypoint.sh /usr/bin
 COPY yuntan-user /usr/bin
+COPY mysql.yaml /data/config.yaml
 
-ENTRYPOINT ["yuntan-user"]
+ENTRYPOINT ["entrypoint.sh"]
 
-CMD ["-c", "config.yaml", "-H", "0.0.0.0"]
+CMD ["yuntan-user"]

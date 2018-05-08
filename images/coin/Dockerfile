@@ -7,8 +7,10 @@ RUN apt-get update && \
 
 WORKDIR /data
 
+COPY entrypoint.sh /usr/bin
 COPY coin /usr/bin
+COPY mysql.yaml /data/config.yaml
 
-ENTRYPOINT ["coin"]
+ENTRYPOINT ["entrypoint.sh"]
 
-CMD ["-c", "config.yaml", "-H", "0.0.0.0"]
+CMD ["coin"]

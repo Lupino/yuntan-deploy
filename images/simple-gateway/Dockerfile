@@ -8,7 +8,8 @@ RUN apt-get update && \
 WORKDIR /data
 
 COPY simple-gateway /usr/bin
+COPY simple-gateway.yaml /data/config.yaml
 
 ENTRYPOINT ["simple-gateway"]
 
-CMD ["-c", "config.yaml"]
+CMD ["-c", "/data/config.yaml"]
