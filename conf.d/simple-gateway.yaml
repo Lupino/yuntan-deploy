@@ -15,7 +15,7 @@ appList:
   - key: 303a7f6361985d1eb891
     secret: fb943942efea9aeb2cccd0b8c0698955f288a091ec2368e8c133860b742ffdcf
     baseUrl: http://yuntan-user:3000
-    secure: false
+    secure: true
   # article
   - key: 8d8c6771e70ff06c95c5
     secret: 56545486008487b00a069af33465d3007352686c96c6b011ff5bd90f6b41591f
