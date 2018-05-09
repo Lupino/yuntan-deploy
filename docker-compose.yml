@@ -6,6 +6,8 @@ services:
     environment:
     - MYSQL_ROOT_PASSWORD=root
     - MYSQL_DATABASE=microservices
+    volumes:
+    - yuntan-mysql:/var/lib/mysql
   simple-gateway:
     restart: always
     image: simple-gateway:yuntan-build
@@ -45,3 +47,6 @@ services:
     - mysqld
     environment:
     - TABLE_PREFIX=8d8c6771e70ff06c95c5
+
+volumes:
+  yuntan-mysql:
