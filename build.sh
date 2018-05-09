@@ -20,6 +20,8 @@ docker build -t simple-gateway:$VER images/simple-gateway
 docker cp yuntan-builded:/data/bin/func images/func
 docker build -t func:$VER images/func
 
+cp conf.d/settings.yml images/yuntan-mqtt
+cp conf.d/mqtt-entrypoint.sh images/yuntan-mqtt
 docker cp yuntan-builded:/data/bin/yuntan-mqtt images/yuntan-mqtt
 docker build -t yuntan-mqtt:$VER images/yuntan-mqtt
 

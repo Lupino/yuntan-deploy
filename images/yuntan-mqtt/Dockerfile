@@ -7,8 +7,10 @@ RUN apt-get update && \
 
 WORKDIR /data
 
+COPY settings.yml /data/settings.yml
 COPY yuntan-mqtt /usr/bin
+COPY mqtt-entrypoint.sh /usr/bin
 
-ENTRYPOINT ["yuntan-mqtt"]
+EXPOSE 1883
 
-CMD ["broker", "--config", "settings.yml"]
+ENTRYPOINT ["mqtt-entrypoint.sh"]
