@@ -8,7 +8,7 @@ auth:
     maxQueueSizeQoS1:     100
     maxQueueSizeQoS2:     100
   service:
-    gateway: GATEWAY
+    host: HOST
     key: KEY
     secret: SECRET
     timeout: 30000

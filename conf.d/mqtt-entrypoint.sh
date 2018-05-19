@@ -3,7 +3,7 @@ set -e
 
 [[ $DEBUG == true ]] && set -x
 
-GATEWAY=${GATEWAY:-"http://simple-gateway:13000"}
+HOST=${HOST:-"http://simple-gateway:13000"}
 KEY=${KEY:-""}
 SECRET=${SECRET:-""}
 

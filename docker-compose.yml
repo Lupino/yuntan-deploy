@@ -21,9 +21,9 @@ services:
     depends_on:
     - simple-gateway
     environment:
-    - GATEWAY=http://simple-gateway:13000
+    - HOST=http://simple-gateway:13000
     - KEY=303a7f6361985d1eb891
-    - SECRECT=fb943942efea9aeb2cccd0b8c0698955f288a091ec2368e8c133860b742ffdcf
+    - SECRET=fb943942efea9aeb2cccd0b8c0698955f288a091ec2368e8c133860b742ffdcf
     ports:
     - '1883:1883'
   coin:
