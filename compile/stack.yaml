@@ -2,7 +2,7 @@
 # For more information, see: http://docs.haskellstack.org/en/stable/yaml_configuration/
 
 # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
-resolver: nightly-2018-05-09
+resolver: lts-12.9
 
 # Local packages, usually specified by relative directory name
 packages:
@@ -16,7 +16,6 @@ packages:
 - apps/sharefs/share-fs-common
 - apps/sharefs/share-fs-client
 - apps/sharefs/share-fs-server
-- apps/sharefs/share-fs-fuse
 - apps/mergeJsonRequest
 - apps/yuntan-mqtt
 - packages/yuntan-base/yuntan-base
@@ -33,7 +32,6 @@ packages:
 - packages/yuntan-common/yuntan-common-wreq
 - packages/yuntan-common/yuntan-common-signature
 - packages/yuntan-common/yuntan-common-graphql
-- packages/yuntan-common/yuntan-common-haxl
 - packages/yuntan-common/yuntan-common-lrucaching
 - packages/yuntan-common/yuntan-common-config-influxdb
 - packages/yuntan-common/yuntan-common-config-mysql
@@ -41,16 +39,12 @@ packages:
 - packages/haskell-periodic/periodic-client
 - packages/haskell-periodic/periodic-common
 - packages/haskell-periodic/periodic-server
-- third_party/Haxl
 - third_party/haskell-mqtt
 - third_party/graphql-haskell
 - third_party/haskell-networking
 - third_party/haskell-socket
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
-extra-deps:
-- HFuse-0.2.5.0
-- uuid-1.3.13
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

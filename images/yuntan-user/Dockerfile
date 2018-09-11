@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Li Meng Jun "lmjubuntu@gmail.com"
 
 RUN apt-get update && \
